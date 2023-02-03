@@ -1,0 +1,20 @@
+{
+  "name": "desafiosnvacomision",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezequieleandi/DesafiosBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezequieleandi/DesafiosBackend/issues"
+  },
+  "homepage": "https://github.com/ezequieleandi/DesafiosBackend#readme"
+}
