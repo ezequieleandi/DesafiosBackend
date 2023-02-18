@@ -45,13 +45,13 @@ class CartManager {
     async addProdToCart(cid, pid) {
         const prod = await Manager.getProductById(pid);
         const cart = await this.getProdsByCartId(cid);
-        // if (cart.some(item => item.product === prod.id)) {
-        //     const index = cart.findIndex(item => item.product === prod.id);
-        //     cart[index].quantity++;
-        // } else {
-        //     cart.push({ product: prod.id, quantity: 1 });
-        // }
-        // return await fs.writeFile(this.rutaCartDB, JSON.stringify(this.carts));
+        if (cart.products.some(item => item.product === prod.id)) {
+            const index = cart.findIndex(item => item.product === prod.id);
+            cart.products[index].quantity++;
+        } else {
+            cart.products.push({ product: prod.id, quantity: 1 });
+        }
+        return await fs.writeFile(this.rutaCartDB, JSON.stringify(this.carts));
         console.log(cart)
     };
 
