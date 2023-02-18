@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Remera",
+        "description": "buenas remeras",
+        "price": "2500",
+        "stock": "5",
+        "category": "indumentaria"
+    },
+    {
+        "id": 2,
+        "title": "ojotas",
+        "description": "buenas ojotas",
+        "price": "3600",
+        "stock": "10",
+        "category": "calzado"
+    },
+    {
+        "id": 3,
+        "title": "sandalias",
+        "description": "buenas sandaaas",
+        "price": "128",
+        "stock": "2",
+        "category": "calzado"
+    }
+]
