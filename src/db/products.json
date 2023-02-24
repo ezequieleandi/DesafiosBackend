@@ -14,13 +14,5 @@
         "price": "3600",
         "stock": "10",
         "category": "calzado"
-    },
-    {
-        "id": 3,
-        "title": "sandalias",
-        "description": "buenas sandaaas",
-        "price": "128",
-        "stock": "2",
-        "category": "calzado"
     }
 ]

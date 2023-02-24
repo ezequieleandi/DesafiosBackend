@@ -4,7 +4,7 @@ const path = require("path");
 const ManagerProduct = require("../productManager");
 const rutaBase = path.join(`db/products.json`);
 const Manager = new ManagerProduct(rutaBase);
-const { uploader } = require("../utils");
+// const { uploader } = require("../utils");
 
 router.get('/', async (req, res) => {
     const limit = Number(req.query.limit)
@@ -16,10 +16,8 @@ router.get('/', async (req, res) => {
             mensaje: "No existe esa cantidad de productos",
         })
     }else{
-        return res.json({
-            mensaje: "Lista de productos",
-            productos: listaProducts
-        })
+        console.log(listaProducts)
+        res.status(200).render('home', { listaProducts });
     }
 })
 router.get('/:id', async (req, res) => {
@@ -31,7 +29,8 @@ router.get('/:id', async (req, res) => {
         res.json({producto: product});
     }
 });
-router.post('/', uploader.single("thumbnail"), async (req, res) =>{
+//para agregar ruta de imagenes: uploader.single("thumbnail")
+router.post('/', async (req, res) =>{
     const file = req.file;
     const { title, description, price, stock, category } = req.body;
     if (!file) return res.status(400).send({ mensaje: "Debe cargar una imagen" });
@@ -39,7 +38,7 @@ router.post('/', uploader.single("thumbnail"), async (req, res) =>{
         return res.status(400).json({ mensaje: 'Todos los campos son requeridos' });
     }else{
         const newProduct = req.body;
-        newProduct.thumbnail = `http://localhost:5000/public/uploads/${file.filename}`
+        // newProduct.thumbnail = `http://localhost:5000/public/uploads/${file.filename}`
         console.log(newProduct)
         await Manager.addProduct(newProduct);
         res.status(200).json({ mensaje: 'Producto agregado correctamente' });

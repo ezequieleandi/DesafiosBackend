@@ -8,7 +8,7 @@ class ManagerProduct {
 
   async addProduct(product) {
     try {
-      const { title, description, price, stock, category, status, thumbnail } = product;
+      const { title, description, price, stock, category, status } = product;
       this.products = await this.getProducts();
       const lastId = this.products[this.products.length - 1].id + 1;
       const insertarProduct = {
@@ -18,7 +18,7 @@ class ManagerProduct {
         stock: stock,
         category: category,
         status: status,
-        thumbnail: thumbnail
+        // thumbnail: thumbnail
       };
       this.products.push({ id: lastId, ...insertarProduct });
       await fs.writeFile(this.rutaProductsDB, JSON.stringify(this.products));

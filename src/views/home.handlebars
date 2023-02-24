@@ -1,0 +1,12 @@
+{{#if listaProducts}}
+    <h1>Productos</h1>
+    {{#each listaProducts}}
+        <h2>{{this.title}}</h2>
+        <p><b>Descripción:</b> {{this.description}}</p>
+        <p><b>Precio: $</b>{{this.price}}</p>
+        <p><b>Categoria:</b> {{this.category}}</p>
+        <p><b>Stock:</b> {{this.stock}}</p>
+    {{/each}}
+{{else}}
+    <strong>No hay productos ingresados</strong>
+{{/if}}
